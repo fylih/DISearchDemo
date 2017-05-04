@@ -1,2 +1,2 @@
-include ':app', ':HttpLibrary'
+include ':HttpLibrary'
 include ':Test'
