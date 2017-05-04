@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.sixin.cordova" version="0.0.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/ns/widgets"
+>
+    <!--<preference name="loglevel" value="DEBUG" />-->
+    <name>服务器接口注册</name>
+    <description>
+        需要网络请求的接口地址都必须在这里注册；否则无法使用此加载框架做网络请求
+    </description>
+    <author email="172942410@qq.com" href="http://www.baidu.com">
+        网络请求接口模块
+    </author>
+
+    <header url="http://114.251.8.193"/>
+
+    <feature name="ExpressionRequest">
+        <param type="http-suffix" value="/api/patent/search/expression" title="1.1 查询专利列表" />
+    </feature>
+
+    <feature name="GetTokenRequest">
+        <param type="http-suffix" value="/token" title="获取token" />
+    </feature>
+
+    <feature name="TrainStationQueryRequest">
+        <param type="http-url" value="http://test.wifi.12306.cn/wifiapps/ticket/cx/ypcx" title="余票查询接口" />
+    </feature>
+
+</widget>
