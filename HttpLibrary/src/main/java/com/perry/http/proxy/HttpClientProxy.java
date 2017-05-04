@@ -44,9 +44,11 @@ public class HttpClientProxy {
 
     public <T> void request(int method, Map<String, String> params, Map<String, File> fileParams, Class<T> cls, AppCallback<T> callback, LoadingInterface li) {
         if (fileParams == null) {
+            Log.e(TAG,"执行了 VolleyClient ");
             mClient = new VolleyClient(mContext, mUrl);
 //            mClient = new XUtilsClient(mContext, mUrl);
         } else {
+            Log.e(TAG,"执行了 SxClient ");
             mClient = new SxClient(mContext, mUrl);
         }
 

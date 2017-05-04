@@ -16,13 +16,8 @@ import com.perry.http.Listener.LoadingInterface;
 import com.perry.http.utils.LogUtil;
 import com.perry.http.utils.VolleyUtil;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -91,13 +86,23 @@ public class VolleyClient extends AbsClient {
         };
 
         if (method == Request.Method.GET) {
-            request = new StringRequest(method, mUrl + formatParameter(params), listener, errorListener);
-        } else {
-            request = new StringRequest(method, mUrl, listener, errorListener) {
+            String getUrl =  mUrl + formatParameter(params);
+            Log.e(TAG,"GET 请求地址："+getUrl);
+            request = new StringRequest(method, getUrl, listener, errorListener);
+//            request = new StringRequest(method, mUrl, listener, errorListener){
 //                @Override
 //                protected Map<String, String> getParams() throws AuthFailureError {
+//                    Log.e(TAG,"请求的 getParams:"+ params.toString());
 //                    return params;
 //                }
+//            };
+        } else {
+            request = new StringRequest(method, mUrl, listener, errorListener) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Log.e(TAG,"请求的 getParams:"+ params.toString());
+                    return params;
+                }
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     Map<String, String> headers = new HashMap<String, String>();
@@ -105,7 +110,7 @@ public class VolleyClient extends AbsClient {
                     headers.put("content-type", "application/json");
                     return headers;
                 }
-
+/**
                 @Override
                 public byte[] getBody() throws AuthFailureError {
                     byte[] body = null;
@@ -140,20 +145,9 @@ public class VolleyClient extends AbsClient {
                         }
                         Log.e(TAG,"发送http请求的body内容："+bodyStr);
                     }
-//                    try {
-//                        object.put("from_station", "VNP");
-//                        object.put("to_station", "AOH");
-//                        object.put("queryDate", "2016-11-30");
-////                        StringEntity entity = new StringEntity(object.toString(), "utf-8");
-//                        String str = new String(object.toString());
-//
-//                        body = object.toString().getBytes("utf-8");
-//                        System.out.println("======object.toString()====" + object.toString());
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
                     return body;
                 }
+                */
             };
         }
         request.setRetryPolicy(new DefaultRetryPolicy(){

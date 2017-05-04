@@ -7,7 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 3.2.7. 查询个人信息
+ * 获取toekn
+ * 目前客户端无法获取；必须在界面获取
  */
 public class GetTokenRequest extends Request {
 
@@ -28,6 +29,7 @@ public class GetTokenRequest extends Request {
     @Override
     public int method() {
         return RequestMethod.POST;
+//        return RequestMethod.GET;
     }
 
 //    {"from_station":"VNP","to_station":"AOH","queryDate":"2016-11-30"}

@@ -13,8 +13,11 @@ import android.widget.Toast;
 import com.perry.http.Listener.AppCallback;
 import com.perry.http.manager.RequestManager;
 import com.perry.http.parser.HttpUrlEntry;
-import com.perry.http.request.ExpressionRequest;
-import com.perry.http.request.GetTokenRequest;
+import com.perry.http.request.RzaSearchRequest;
+import com.perry.http.request.RzaStatisticsRequest;
+import com.perry.http.request.RzcSearchRequest;
+import com.perry.http.request.RzcStatisticsRequest;
+import com.perry.http.request.RzpSearchRequest;
 import com.perry.test.adapter.RequestAdapter;
 
 /**
@@ -29,6 +32,7 @@ public class TestActivity extends Activity {
     private String TAG = "TestActivity";
     RequestManager requestManager;
 
+    String access_token = "89641c22-90be-430b-a14c-66602b9588b2";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,8 +77,8 @@ public class TestActivity extends Activity {
 
     public void textRequest(final HttpUrlEntry httpUrlEntry) {
 
-        if ("ExpressionRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new ExpressionRequest("a815801fac1100086184a8699b9858d9", "a8158020ac1100086184a8693e67681e", "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+        if ("RzaSearchRequest".equals(httpUrlEntry.urlName)) {
+            requestManager.sendRequest(new RzaSearchRequest("a815801fac1100086184a8699b9858d9", "a8158020ac1100086184a8693e67681e", "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 
@@ -95,8 +99,74 @@ public class TestActivity extends Activity {
                     Toast.makeText(TestActivity.this, "错误提示:" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }), httpUrlEntry.urlTitle);
-        } else if ("GetTokenRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new GetTokenRequest("a815801fac1100086184a8699b9858d9", "http://localhost:8080", "token", "implicit").withResponse(TestBean.class, new AppCallback<TestBean>() {
+        } else if ("RzaStatisticsRequest".equals(httpUrlEntry.urlName)) {
+            requestManager.sendRequest(new RzaStatisticsRequest("a815801fac1100086184a8699b9858d9", "a8158020ac1100086184a8693e67681e", "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+                @Override
+                public void callback(TestBean testBean) {
+
+                }
+
+                @Override
+                public void callbackString(String str) {
+//                    Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent();
+                    intent.putExtra("content", str);
+                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+                    intent.setClass(TestActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    Toast.makeText(TestActivity.this, "错误提示:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }), httpUrlEntry.urlTitle);
+        } else if ("RzcSearchRequest".equals(httpUrlEntry.urlName)) {
+            requestManager.sendRequest(new RzcSearchRequest("a815801fac1100086184a8699b9858d9", "a8158020ac1100086184a8693e67681e", "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+                @Override
+                public void callback(TestBean testBean) {
+
+                }
+
+                @Override
+                public void callbackString(String str) {
+//                    Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent();
+                    intent.putExtra("content", str);
+                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+                    intent.setClass(TestActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    Toast.makeText(TestActivity.this, "错误提示:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }), httpUrlEntry.urlTitle);
+        } else if ("RzcStatisticsRequest".equals(httpUrlEntry.urlName)) {
+            requestManager.sendRequest(new RzcStatisticsRequest("a815801fac1100086184a8699b9858d9", "a8158020ac1100086184a8693e67681e", "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+                @Override
+                public void callback(TestBean testBean) {
+
+                }
+
+                @Override
+                public void callbackString(String str) {
+//                    Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent();
+                    intent.putExtra("content", str);
+                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+                    intent.setClass(TestActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    Toast.makeText(TestActivity.this, "错误提示:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }), httpUrlEntry.urlTitle);
+        } else if ("RzpSearchRequest".equals(httpUrlEntry.urlName)) {
+            requestManager.sendRequest(new RzpSearchRequest("a815801fac1100086184a8699b9858d9", "a8158020ac1100086184a8693e67681e", "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 

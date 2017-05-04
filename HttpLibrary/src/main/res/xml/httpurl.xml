@@ -14,16 +14,42 @@
 
     <header url="http://114.251.8.193"/>
 
-    <feature name="ExpressionRequest">
-        <param type="http-suffix" value="/api/patent/search/expression" title="1.1 查询专利列表" />
-    </feature>
+    <!--<feature name="ExpressionRequest">-->
+        <!--&lt;!&ndash;/api/copyrightrza/search/expression&ndash;&gt;-->
+        <!--<param type="http-suffix" value="/api/patent/search/expression" title="1.1 查询专利列表" />-->
+    <!--</feature>-->
 
-    <feature name="GetTokenRequest">
-        <param type="http-suffix" value="/token" title="获取token" />
-    </feature>
+        <!--/api/copyrightrza/search/expression-->
+    	<!--/api/copyrightrza/statistics	-->
+    	<!--/api/copyrightrzc/search/expression-->
+    	<!--/api/copyrightrzc/statistics-->
+    	<!--/api/copyrightrzp/search/expression-->
 
-    <feature name="TrainStationQueryRequest">
-        <param type="http-url" value="http://test.wifi.12306.cn/wifiapps/ticket/cx/ypcx" title="余票查询接口" />
+    <!--toekn-->
+    <!--http://mail.cernet.cc/#access_token=89641c22-90be-430b-a14c-66602b9588b2&token_type=bearer&expires_in=604248&scope=read_cn-->
+    <feature name="RzaSearchRequest">
+        <param type="http-suffix" value="/api/copyrightrza/search/expression" title="软著专用许可合同登记公告检索" />
     </feature>
+    <feature name="RzaStatisticsRequest">
+        <param type="http-suffix" value="/api/copyrightrza/statistics" title="软著专用许可分类查询" />
+    </feature>
+    <feature name="RzcSearchRequest">
+        <param type="http-suffix" value="/api/copyrightrzc/search/expression" title="软著登记撤销检索" />
+    </feature>
+    <feature name="RzcStatisticsRequest">
+        <param type="http-suffix" value="/api/copyrightrzc/statistics" title="软著登记撤销分类统计查询" />
+    </feature>
+    <feature name="RzpSearchRequest">
+        <param type="http-suffix" value="/api/copyrightrzp/search/expression" title="作品著作权检索" />
+    </feature>
+    <!--<feature name="GetTokenRequest">-->
+        <!--&lt;!&ndash;<param type="http-suffix" value="/token" title="获取token" />&ndash;&gt;-->
+        <!--<param type="http-suffix" value="/oauth/authorize" title="获取token" />-->
+
+    <!--</feature>-->
+
+    <!--<feature name="TrainStationQueryRequest">-->
+        <!--<param type="http-url" value="http://test.wifi.12306.cn/wifiapps/ticket/cx/ypcx" title="余票查询测试接口" />-->
+    <!--</feature>-->
 
 </widget>
