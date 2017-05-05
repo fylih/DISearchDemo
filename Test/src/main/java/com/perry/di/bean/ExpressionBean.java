@@ -85,7 +85,6 @@ public class ExpressionBean extends BaseBean<ExpressionBean> {
          */
         public String tcss;//
         public String slid;
-        public String tcs;
 
         public String swnm;//
         public String tcs;
@@ -111,7 +110,6 @@ public class ExpressionBean extends BaseBean<ExpressionBean> {
             return "Record{" +
                     "tcss='" + tcss + '\'' +
                     ", slid='" + slid + '\'' +
-                    ", tcs='" + tcs + '\'' +
                     ", swnm='" + swnm + '\'' +
                     ", tcs='" + tcs + '\'' +
                     ", swrn='" + swrn + '\'' +
