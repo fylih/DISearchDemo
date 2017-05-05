@@ -1,15 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_wifi"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textview"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="公司分类"
-        android:textColor="@color/black"
-        android:gravity="center_horizontal"
-        android:padding="5dp"/>
+        android:layout_margin="5dp"
+        android:background="@color/bg_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="tcss:" />
+
+                <TextView
+                    android:id="@+id/text_1"
+                    style="@style/expression_text"
+                    android:text="上海紫光北美信息科技有限公司" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="slid:" />
+
+                <TextView
+                    android:id="@+id/text_2"
+                    style="@style/expression_text"
+                    android:text="上海天智计算机图形有限公司" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="swnm:" />
+
+                <TextView
+                    android:id="@+id/text_3"
+                    style="@style/expression_text"
+                    android:text="金属管件模具设计软件V1.0" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="tcs:" />
+
+                <TextView
+                    android:id="@+id/text_4"
+                    style="@style/expression_text"
+                    android:text="原登记者不是著作权人。" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout5"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="swrn:" />
+
+                <TextView
+                    android:id="@+id/text_5"
+                    style="@style/expression_text"
+                    android:text="河北省盐山县电力管件有限公司" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout6"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="scid:" />
+
+                <TextView
+                    android:id="@+id/text_6"
+                    style="@style/expression_text"
+                    android:text="94B1F675B8C6D0FE18E6C6B7C5D29506" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout7"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="fpy:" />
+
+                <TextView
+                    android:id="@+id/text_7"
+                    style="@style/expression_text"
+                    android:text="2014/01/01 00:00:00" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout8"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="fy:" />
+
+                <TextView
+                    android:id="@+id/text_8"
+                    style="@style/expression_text"
+                    android:text="2014/01/01 00:00:00" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout9"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="type:" />
+
+                <TextView
+                    android:id="@+id/text_9"
+                    style="@style/expression_text"
+                    android:text="美术" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout10"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="fd:" />
+
+                <TextView
+                    android:id="@+id/text_10"
+                    style="@style/expression_text"
+                    android:text="2014/04/28 00:00:00" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout11"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="pd:" />
+
+                <TextView
+                    android:id="@+id/text_11"
+                    style="@style/expression_text"
+                    android:text="2016/05/05 00:00:00" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout12"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="py:" />
+
+                <TextView
+                    android:id="@+id/text_12"
+                    style="@style/expression_text"
+                    android:text="2016/01/01 00:00:00" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout13"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="fpd:" />
+
+                <TextView
+                    android:id="@+id/text_13"
+                    style="@style/expression_text"
+                    android:text="2014/05/29 00:00:00" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout14"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="szid:" />
+
+                <TextView
+                    android:id="@+id/text_14"
+                    style="@style/expression_text"
+                    android:text="5EF7CBA3C90D47B55B32DDC8B5AFE48D" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout15"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="owner:" />
+
+                <TextView
+                    android:id="@+id/text_15"
+                    style="@style/expression_text"
+                    android:text="广州黄牛牛电器有限公司" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout16"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="anm:" />
+
+                <TextView
+                    android:id="@+id/text_16"
+                    style="@style/expression_text"
+                    android:text="Niuniu Electricol 牛牛电器 logo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout17"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="rn:" />
+
+                <TextView
+                    android:id="@+id/text_17"
+                    style="@style/expression_text"
+                    android:text="Niuniu Electricol 牛牛电器 logo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout18"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="rd:" />
+
+                <TextView
+                    android:id="@+id/text_18"
+                    style="@style/expression_text"
+                    android:text="Niuniu Electricol 牛牛电器 logo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout19"
+                style="@style/expression_layout">
+
+                <TextView
+                    style="@style/expression_text_1"
+                    android:text="ry:" />
+
+                <TextView
+                    android:id="@+id/text_19"
+                    style="@style/expression_text"
+                    android:text="Niuniu Electricol 牛牛电器 logo" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

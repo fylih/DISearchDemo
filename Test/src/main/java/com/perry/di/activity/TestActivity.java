@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.perry.di.R;
 import com.perry.di.adapter.RequestAdapter;
+import com.perry.di.bean.ExpressionBean;
 import com.perry.di.bean.TestBean;
 import com.perry.http.Listener.AppCallback;
 import com.perry.http.manager.RequestManager;
@@ -84,20 +85,25 @@ public class TestActivity extends BaseActivity {
     public void textRequest(final HttpUrlEntry httpUrlEntry, String keyStr,String categoryColumn) {
 
         if ("RzaSearchRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzaSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzaSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(ExpressionBean.class, new AppCallback<ExpressionBean>() {
                 @Override
-                public void callback(TestBean testBean) {
-
+                public void callback(ExpressionBean bean) {
+                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+                    intent.putExtra("bean",bean);
+                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+                    intent.setClass(TestActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
 
                 @Override
                 public void callbackString(String str) {
 //                    Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent();
-                    intent.putExtra("content", str);
-                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
-                    intent.setClass(TestActivity.this, MainActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+//                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+//                    intent.setClass(TestActivity.this, MainActivity.class);
+//                    startActivity(intent);
                 }
 
                 @Override
@@ -132,20 +138,25 @@ public class TestActivity extends BaseActivity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzcSearchRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzcSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzcSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(ExpressionBean.class, new AppCallback<ExpressionBean>() {
                 @Override
-                public void callback(TestBean testBean) {
-
+                public void callback(ExpressionBean expressionBean) {
+                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+                    intent.putExtra("bean",expressionBean);
+                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+                    intent.setClass(TestActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
 
                 @Override
                 public void callbackString(String str) {
 //                    Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent();
-                    intent.putExtra("content", str);
-                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
-                    intent.setClass(TestActivity.this, MainActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+//                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+//                    intent.setClass(TestActivity.this, MainActivity.class);
+//                    startActivity(intent);
                 }
 
                 @Override
@@ -180,20 +191,25 @@ public class TestActivity extends BaseActivity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzpSearchRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzpSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzpSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(ExpressionBean.class, new AppCallback<ExpressionBean>() {
                 @Override
-                public void callback(TestBean testBean) {
-
+                public void callback(ExpressionBean expressionBean) {
+                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+                    intent.putExtra("bean",expressionBean);
+                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+                    intent.setClass(TestActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
 
                 @Override
                 public void callbackString(String str) {
 //                    Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent();
-                    intent.putExtra("content", str);
-                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
-                    intent.setClass(TestActivity.this, MainActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+//                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+//                    intent.setClass(TestActivity.this, MainActivity.class);
+//                    startActivity(intent);
                 }
 
                 @Override
