@@ -122,7 +122,7 @@ public class TestActivity extends Activity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzcSearchRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzcSearchRequest("a815801fac1100086184a8699b9858d9", "a8158020ac1100086184a8693e67681e", "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzcSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 
@@ -144,7 +144,7 @@ public class TestActivity extends Activity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzcStatisticsRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzcStatisticsRequest("a815801fac1100086184a8699b9858d9", "89641c22-90be-430b-a14c-66602b9588b2", "read_cn","计算机","SWRN;CTN;RY").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzcStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn","计算机","SWRN;CTN;RY").withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 
@@ -166,7 +166,7 @@ public class TestActivity extends Activity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzpSearchRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzpSearchRequest("a815801fac1100086184a8699b9858d9", "a8158020ac1100086184a8693e67681e", "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzpSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 

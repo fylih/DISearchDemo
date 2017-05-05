@@ -30,10 +30,9 @@ public class RzaStatisticsRequest extends Request {
 
     @Override
     public int method() {
-        return RequestMethod.POST;
+        return RequestMethod.GET;
+//        return RequestMethod.POST;
     }
-
-//    {"from_station":"VNP","to_station":"AOH","queryDate":"2016-11-30"}
 
     @Override
     public Map<String, String> getParameter() {
