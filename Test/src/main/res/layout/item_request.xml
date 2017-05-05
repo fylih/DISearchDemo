@@ -4,10 +4,15 @@
     android:layout_height="wrap_content">
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_margin="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="5dp"
     >
 
     <LinearLayout
@@ -16,7 +21,7 @@
         android:layout_height="wrap_content"
         android:background="#aabbcc"
         android:orientation="vertical"
-        android:paddingTop="10dp"
+        android:paddingTop="0dp"
         android:gravity="center"
         >
 
@@ -48,6 +53,7 @@
                 android:hint="请输入检索关键字"
                 android:singleLine="true"
                 android:layout_weight="1"
+                android:id="@+id/edit_input"
                 />
 
             <Button
@@ -55,43 +61,44 @@
                 android:layout_height="wrap_content"
                 android:text="搜索"
                 android:layout_gravity="right"
+                android:id="@+id/button_search"
                 />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/linear_rza"
+            >
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="分类号"
+                android:text="转让方"
 
                 />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="首次发表年" />
+                android:text="受让方" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="登记年" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="著作权人国籍"
+                android:text="登记年"
                 android:singleLine="true"
                 android:textSize="12sp"
                 android:textColor="@android:color/black"
                 />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/linear_rzc"
+            >
 
             <CheckBox
                 android:layout_width="wrap_content"

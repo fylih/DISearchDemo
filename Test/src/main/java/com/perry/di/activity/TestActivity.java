@@ -54,8 +54,13 @@ public class TestActivity extends BaseActivity {
             @Override
             public void onItemClick(int position, HttpUrlEntry httpUrlEntry) {
                 Log.e(TAG, "onItemClick:" + position + ",httpUrlEntry:" + httpUrlEntry.toString());
+            }
+
+            @Override
+            public void onItemClick(int position, HttpUrlEntry httpUrlEntry, String keyStr,String categoryColumn) {
+                Log.e(TAG, "onItemClick:" + position + ",httpUrlEntry:" + httpUrlEntry.toString()+",keyStr:"+keyStr+",categoryColumn:"+categoryColumn);
                 //请求测试；
-                textRequest(httpUrlEntry);
+                textRequest(httpUrlEntry,keyStr,categoryColumn);
             }
 
             @Override
@@ -76,10 +81,10 @@ public class TestActivity extends BaseActivity {
 //
     }
 
-    public void textRequest(final HttpUrlEntry httpUrlEntry) {
+    public void textRequest(final HttpUrlEntry httpUrlEntry, String keyStr,String categoryColumn) {
 
         if ("RzaSearchRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzaSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzaSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 
@@ -101,7 +106,11 @@ public class TestActivity extends BaseActivity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzaStatisticsRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzaStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", "计算机", "TCS;TCSS;RY").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            // categoryColumn "TCS;TCSS;RY"
+            if(categoryColumn == null || categoryColumn.length() == 0){
+                categoryColumn = "TCS;TCSS;RY";
+            }
+            requestManager.sendRequest(new RzaStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, categoryColumn).withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 
@@ -123,7 +132,7 @@ public class TestActivity extends BaseActivity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzcSearchRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzcSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzcSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 
@@ -145,7 +154,11 @@ public class TestActivity extends BaseActivity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzcStatisticsRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzcStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn","计算机","SWRN;CTN;RY").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            //categoryColumn "SWRN;CTN;RY"
+            if(categoryColumn == null || categoryColumn.length() == 0){
+                categoryColumn = "SWRN;CTN;RY";
+            }
+            requestManager.sendRequest(new RzcStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn",keyStr,categoryColumn).withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 
@@ -167,7 +180,7 @@ public class TestActivity extends BaseActivity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzpSearchRequest".equals(httpUrlEntry.urlName)) {
-            requestManager.sendRequest(new RzpSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", "计算机", "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzpSearchRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, "1", "", "").withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override
                 public void callback(TestBean testBean) {
 
