@@ -9,17 +9,28 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.perry.di.activity.MainActivity">
-    <include layout="@layout/item_request"
-        android:id="@+id/title_include"/>
-    <ScrollView
+
+    <!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@id/title_include">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/contentTextView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:text="Hello World!" />-->
+    <!--</ScrollView>-->
+
+    <include
+        android:id="@+id/title_include"
+        layout="@layout/item_request" />
+
+    <com.mrw.wzmrecyclerview.PullToLoad.PullToLoadRecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/title_include">
-
-        <TextView
-            android:id="@+id/contentTextView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello World!" />
-    </ScrollView>
+        android:layout_below="@id/title_include"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 </RelativeLayout>
