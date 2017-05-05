@@ -2,34 +2,30 @@ package com.perry.di.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.mrw.wzmrecyclerview.LayoutManager.WZMLinearLayoutManager;
-import com.mrw.wzmrecyclerview.PullToRefresh.OnRefreshListener;
-import com.mrw.wzmrecyclerview.PullToRefresh.PullToRefreshRecyclerView;
 import com.perry.di.R;
 import com.perry.di.adapter.CopyrightAdapter;
+import com.perry.di.view.SwipeRefreshLayout;
 import com.perry.http.parser.HttpUrlEntry;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnLoadListener {
 
     TextView textView;
     TextView titleTV;
     TextView urlTV;
-    private PullToRefreshRecyclerView recyclerView;
+    private RecyclerView recyclerView;
+    private SwipeRefreshLayout mSwipeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        textView = (TextView)findViewById(R.id.contentTextView);
-        LinearLayout layout = (LinearLayout) findViewById(R.id.title_include);
-        recyclerView = (PullToRefreshRecyclerView) findViewById(R.id.recyclerView);
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) recyclerView.getLayoutParams();
-        params.topMargin = layout.getHeight();
-        recyclerView.setLayoutParams(params);
+        mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipelayout);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         titleTV = (TextView)findViewById(R.id.item_tv_request_name);
         urlTV = (TextView)findViewById(R.id.item_tv_request_value);
         Intent intent = getIntent();
@@ -44,12 +40,25 @@ public class MainActivity extends BaseActivity {
     private void initView(){
         recyclerView.setLayoutManager(new WZMLinearLayoutManager());
         recyclerView.setAdapter(new CopyrightAdapter(this));
-        recyclerView.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onStartRefreshing() {
 
-            }
-        });
+        mSwipeLayout.setOnRefreshListener(this);
+        mSwipeLayout.setOnLoadListener(this);
+        mSwipeLayout.setColor(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+        mSwipeLayout.setMode(SwipeRefreshLayout.Mode.BOTH);
+        mSwipeLayout.setLoadNoFull(true);
+
+    }
+
+    @Override
+    public void onRefresh() {
+
+    }
+
+    @Override
+    public void onLoad() {
 
     }
 }

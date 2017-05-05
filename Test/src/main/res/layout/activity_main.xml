@@ -26,11 +26,14 @@
         android:id="@+id/title_include"
         layout="@layout/item_request" />
 
-    <com.mrw.wzmrecyclerview.PullToLoad.PullToLoadRecyclerView
-        android:id="@+id/recyclerView"
+    <com.perry.di.view.SwipeRefreshLayout
+        android:id="@+id/swipelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/title_include"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_below="@id/title_include">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.perry.di.view.SwipeRefreshLayout>
 </RelativeLayout>
