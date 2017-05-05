@@ -154,9 +154,9 @@ public class TestActivity extends BaseActivity {
                 }
             }), httpUrlEntry.urlTitle);
         } else if ("RzcStatisticsRequest".equals(httpUrlEntry.urlName)) {
-            //categoryColumn "SWRN;CTN;RY"
+            //categoryColumn  SWRN;TCS;RY
             if(categoryColumn == null || categoryColumn.length() == 0){
-                categoryColumn = "SWRN;CTN;RY";
+                categoryColumn = "SWRN;TCS;RY";
             }
             requestManager.sendRequest(new RzcStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn",keyStr,categoryColumn).withResponse(TestBean.class, new AppCallback<TestBean>() {
                 @Override

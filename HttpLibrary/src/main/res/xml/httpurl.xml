@@ -19,12 +19,6 @@
         <!--<param type="http-suffix" value="/api/patent/search/expression" title="1.1 查询专利列表" />-->
     <!--</feature>-->
 
-        <!--/api/copyrightrza/search/expression-->
-    	<!--/api/copyrightrza/statistics	-->
-    	<!--/api/copyrightrzc/search/expression-->
-    	<!--/api/copyrightrzc/statistics-->
-    	<!--/api/copyrightrzp/search/expression-->
-
     <!--toekn-->
     <!--http://mail.cernet.cc/#access_token=89641c22-90be-430b-a14c-66602b9588b2&token_type=bearer&expires_in=604248&scope=read_cn-->
     <feature name="RzaSearchRequest">
