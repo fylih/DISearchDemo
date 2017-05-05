@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 软著登记撤销检索
+ * 作品著作权检索
  */
 public class RzpSearchRequest extends Request {
 

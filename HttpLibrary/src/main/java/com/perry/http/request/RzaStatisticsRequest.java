@@ -16,18 +16,15 @@ public class RzaStatisticsRequest extends Request {
     private String access_token;
     private String scope;
     private String express;
-    private String page;
-    private String sort_column;
-    private String page_row;
+    private String categoryColumn;
 
-    public RzaStatisticsRequest(String client_id, String access_token, String scope, String express, String page, String sort_column, String page_row) {
+    public RzaStatisticsRequest(String client_id, String access_token, String scope, String express, String categoryColumn) {
         this.client_id = client_id;
         this.access_token = access_token;
         this.scope = scope;
         this.express = express;
-        this.page = page;
-        this.sort_column = sort_column;
-        this.page_row = page_row;
+        this.categoryColumn = categoryColumn;
+
     }
 
 
@@ -45,9 +42,7 @@ public class RzaStatisticsRequest extends Request {
         map.put("access_token", access_token);
         map.put("scope", scope);
         map.put("express", express);
-        map.put("page", page);
-        map.put("sort_column", sort_column);
-        map.put("page_row", page_row);
+        map.put("categoryColumn",categoryColumn);
         return map;
     }
 
