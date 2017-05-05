@@ -1,29 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="#aabbcc"
-    android:paddingTop="10dp"
-    android:id="@+id/item_request_linear"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
     >
 
-    <TextView
-        android:id="@+id/item_tv_request_name"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/item_request_linear"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:background="#ccbbaa"
-        android:text="123"
-        android:padding="15dp"
-        />
-    <TextView
-        android:id="@+id/item_tv_request_value"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:background="#aaccbb"
-        android:textSize="15sp"
-        />
+        android:background="#aabbcc"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        >
 
+        <TextView
+            android:id="@+id/item_tv_request_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ccbbaa"
+            android:padding="15dp"
+            android:text="接口名称"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/item_tv_request_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#aaccbb"
+            android:paddingLeft="5dp"
+            android:text="http://url地址"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入检索关键字"
+                android:singleLine="true"
+                android:layout_weight="1"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜索"
+                android:layout_gravity="right"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类号"
+
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首次发表年" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登记年" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="著作权人国籍"
+                android:singleLine="true"
+                android:textSize="12sp"
+                android:textColor="@android:color/black"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="原登记者" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="撤销原因" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="撤销年" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
 </LinearLayout>

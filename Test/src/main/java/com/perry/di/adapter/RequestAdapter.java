@@ -1,5 +1,6 @@
 package com.perry.di.adapter;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.perry.di.R;
 import com.perry.http.parser.ConfigXmlParser;
 import com.perry.http.parser.HttpUrlEntry;
-import com.perry.di.R;
 
 /**
  * Created by lipengjun on 2016/11/30.
@@ -19,11 +20,16 @@ import com.perry.di.R;
 public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
 
     private static final String TAG = "RequestAdapter";
+    Activity activity;
+    public RequestAdapter(Activity activity) {
+        this.activity = activity;
+    }
 
     @Override
     public RequestViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.e(TAG, "onCreateViewHolder, i: " + viewType);
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_request, null);
+        View view = LayoutInflater.from(activity).inflate(R.layout.item_request, null);
+//        View view = View.inflate(activity,R.layout.item_request, null);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         view.setLayoutParams(lp);
         return new RequestViewHolder(view, onRecyclerViewListener);

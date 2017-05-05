@@ -44,7 +44,7 @@ public class TestActivity extends BaseActivity {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new RequestAdapter();
+        adapter = new RequestAdapter(this);
         adapter.setOnRecyclerViewListener(new RequestAdapter.OnRecyclerViewListener() {
             @Override
             public void onItemClick(int position) {

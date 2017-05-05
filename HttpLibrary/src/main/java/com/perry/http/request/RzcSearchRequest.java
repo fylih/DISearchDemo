@@ -20,6 +20,16 @@ public class RzcSearchRequest extends Request {
     private String sort_column;
     private String page_row;
 
+    /**
+     *
+     * @param client_id
+     * @param access_token
+     * @param scope
+     * @param express
+     * @param page
+     * @param sort_column
+     * @param page_row
+     */
     public RzcSearchRequest(String client_id, String access_token, String scope, String express, String page, String sort_column, String page_row) {
         this.client_id = client_id;
         this.access_token = access_token;

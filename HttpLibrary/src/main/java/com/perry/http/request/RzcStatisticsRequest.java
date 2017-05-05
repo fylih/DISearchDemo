@@ -18,6 +18,14 @@ public class RzcStatisticsRequest extends Request {
     private String express;
     private String categoryColumn;
 
+    /**
+     *
+     * @param client_id
+     * @param access_token
+     * @param scope
+     * @param express
+     * @param categoryColumn
+     */
     public RzcStatisticsRequest(String client_id, String access_token, String scope, String express, String categoryColumn) {
         this.client_id = client_id;
         this.access_token = access_token;
