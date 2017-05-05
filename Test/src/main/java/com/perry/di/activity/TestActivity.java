@@ -1,6 +1,5 @@
-package com.perry.test;
+package com.perry.di.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.perry.di.R;
+import com.perry.di.adapter.RequestAdapter;
+import com.perry.di.bean.TestBean;
 import com.perry.http.Listener.AppCallback;
 import com.perry.http.manager.RequestManager;
 import com.perry.http.parser.HttpUrlEntry;
@@ -18,12 +20,11 @@ import com.perry.http.request.RzaStatisticsRequest;
 import com.perry.http.request.RzcSearchRequest;
 import com.perry.http.request.RzcStatisticsRequest;
 import com.perry.http.request.RzpSearchRequest;
-import com.perry.test.adapter.RequestAdapter;
 
 /**
  * Created by lipengjun on 2016/11/29.
  */
-public class TestActivity extends Activity {
+public class TestActivity extends BaseActivity {
 
     Button buttonTest;
     //    ListView listview;

@@ -1,13 +1,13 @@
-package com.perry.test;
+package com.perry.di.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.perry.di.R;
 import com.perry.http.parser.HttpUrlEntry;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
     TextView textView;
     TextView titleTV;

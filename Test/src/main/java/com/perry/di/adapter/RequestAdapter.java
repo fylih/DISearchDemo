@@ -1,4 +1,4 @@
-package com.perry.test.adapter;
+package com.perry.di.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.perry.http.parser.ConfigXmlParser;
 import com.perry.http.parser.HttpUrlEntry;
-import com.perry.test.R;
+import com.perry.di.R;
 
 /**
  * Created by lipengjun on 2016/11/30.

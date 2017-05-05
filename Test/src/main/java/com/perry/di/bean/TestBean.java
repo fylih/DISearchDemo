@@ -1,4 +1,4 @@
-package com.perry.test;
+package com.perry.di.bean;
 
 import java.io.Serializable;
 
