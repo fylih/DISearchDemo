@@ -8,6 +8,21 @@
     <include
         android:id="@+id/title_include"
         layout="@layout/item_request" />
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/title_include"
+        android:visibility="visible"
+        >
+
+    <TextView
+    android:id="@+id/contentTextView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Hello World!" />
+    </ScrollView>
+
+
 
     <com.perry.di.view.SwipeRefreshLayout
         android:id="@+id/swipelayout"

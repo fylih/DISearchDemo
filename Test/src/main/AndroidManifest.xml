@@ -18,6 +18,10 @@
             android:label="检索列表详情"
             >
         </activity>
+        <activity android:name=".activity.StatisticsActivity"
+            android:label="查询列表详情"
+            >
+        </activity>
     </application>
 
 </manifest>

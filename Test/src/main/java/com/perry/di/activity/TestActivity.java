@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.perry.di.R;
 import com.perry.di.adapter.RequestAdapter;
 import com.perry.di.bean.ExpressionBean;
+import com.perry.di.bean.StatisticsBean;
 import com.perry.di.bean.TestBean;
 import com.perry.http.Listener.AppCallback;
 import com.perry.http.manager.RequestManager;
@@ -116,20 +117,24 @@ public class TestActivity extends BaseActivity {
             if(categoryColumn == null || categoryColumn.length() == 0){
                 categoryColumn = "TCS;TCSS;RY";
             }
-            requestManager.sendRequest(new RzaStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, categoryColumn).withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzaStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn", keyStr, categoryColumn).withResponse(StatisticsBean.class, new AppCallback<StatisticsBean>() {
                 @Override
-                public void callback(TestBean testBean) {
-
+                public void callback(StatisticsBean statisticsBean) {
+                    Intent intent = new Intent();
+                    intent.putExtra("content", statisticsBean);
+                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+                    intent.setClass(TestActivity.this, StatisticsActivity.class);
+                    startActivity(intent);
                 }
 
                 @Override
                 public void callbackString(String str) {
 //                    Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent();
-                    intent.putExtra("content", str);
-                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
-                    intent.setClass(TestActivity.this, MainActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+//                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+//                    intent.setClass(TestActivity.this, StatisticsActivity.class);
+//                    startActivity(intent);
                 }
 
                 @Override
@@ -169,20 +174,25 @@ public class TestActivity extends BaseActivity {
             if(categoryColumn == null || categoryColumn.length() == 0){
                 categoryColumn = "SWRN;TCS;RY";
             }
-            requestManager.sendRequest(new RzcStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn",keyStr,categoryColumn).withResponse(TestBean.class, new AppCallback<TestBean>() {
+            requestManager.sendRequest(new RzcStatisticsRequest("a815801fac1100086184a8699b9858d9", access_token, "read_cn",keyStr,categoryColumn).withResponse(StatisticsBean.class, new AppCallback<StatisticsBean>() {
                 @Override
-                public void callback(TestBean testBean) {
-
+                public void callback(StatisticsBean statisticsBean) {
+                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+                    intent.putExtra("content", statisticsBean);
+                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+                    intent.setClass(TestActivity.this, StatisticsActivity.class);
+                    startActivity(intent);
                 }
 
                 @Override
                 public void callbackString(String str) {
 //                    Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent();
-                    intent.putExtra("content", str);
-                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
-                    intent.setClass(TestActivity.this, MainActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent();
+//                    intent.putExtra("content", str);
+//                    intent.putExtra("HttpUrlEntry", httpUrlEntry);
+//                    intent.setClass(TestActivity.this, StatisticsActivity.class);
+//                    startActivity(intent);
                 }
 
                 @Override

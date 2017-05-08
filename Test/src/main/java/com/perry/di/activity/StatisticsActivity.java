@@ -7,43 +7,45 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.perry.di.R;
-import com.perry.di.adapter.CopyrightAdapter;
-import com.perry.di.bean.ExpressionBean;
+import com.perry.di.adapter.StatisticsAdapter;
+import com.perry.di.bean.StatisticsBean;
 import com.perry.di.view.SwipeRefreshLayout;
 import com.perry.http.parser.HttpUrlEntry;
 
-public class MainActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnLoadListener {
+public class StatisticsActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnLoadListener {
 
     TextView textView;
     TextView titleTV;
     TextView urlTV;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout mSwipeLayout;
-    private ExpressionBean expressionBean;
-
+    StatisticsAdapter statisticsAdapter;
+    StatisticsBean statisticsBean;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-//        textView = (TextView)findViewById(R.id.contentTextView);
+        setContentView(R.layout.activity_statistics);
+        textView = (TextView)findViewById(R.id.contentTextView);
         mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipelayout);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         titleTV = (TextView)findViewById(R.id.item_tv_request_name);
         urlTV = (TextView)findViewById(R.id.item_tv_request_value);
         Intent intent = getIntent();
 //        String content = intent.getStringExtra("content");
-        expressionBean = (ExpressionBean) intent.getSerializableExtra("bean");
+        statisticsBean = (StatisticsBean) intent.getSerializableExtra("content");
         HttpUrlEntry httpUrlEntry = (HttpUrlEntry) intent.getSerializableExtra("HttpUrlEntry");
         titleTV.setText(httpUrlEntry.urlTitle);
         urlTV.setText(httpUrlEntry.urlAddress);
-//        textView.setText(content);
+        textView.setText(statisticsBean.toString());
+        statisticsAdapter = new StatisticsAdapter(this);
+        statisticsAdapter.setData(statisticsBean);
         initView();
     }
 
     private void initView(){
 //        recyclerView.setLayoutManager(new WZMLinearLayoutManager());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new CopyrightAdapter(this,expressionBean.context.records));
+        recyclerView.setAdapter(statisticsAdapter);
 
         mSwipeLayout.setOnRefreshListener(this);
         mSwipeLayout.setOnLoadListener(this);

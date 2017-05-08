@@ -37,7 +37,6 @@ public class StatisticsBean extends BaseBean<StatisticsBean> {
         public ArrayList<VC> ry;//撤销年   ，登记年
         public ArrayList<VC> tcs;//撤销原因  ， 转让方
         public ArrayList<VC> swrn;//原登记者
-
         public ArrayList<VC> tcss;//受让方
 
         @Override
@@ -52,6 +51,7 @@ public class StatisticsBean extends BaseBean<StatisticsBean> {
     }
 
     public class VC implements Serializable {
+        public String title;//
         /**
          * {
          * "value": "2012/01/01",
@@ -64,7 +64,8 @@ public class StatisticsBean extends BaseBean<StatisticsBean> {
         @Override
         public String toString() {
             return "VC{" +
-                    "value='" + value + '\'' +
+                    "title='" + title + '\'' +
+                    ", value='" + value + '\'' +
                     ", count='" + count + '\'' +
                     '}';
         }
